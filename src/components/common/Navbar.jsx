@@ -2,6 +2,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { Flower2, Settings } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import GoogleLoginBtn from './GoogleLoginBtn';
 
 const AppNavbar = ({ theme, toggleTheme }) => {
   return (
@@ -31,6 +32,7 @@ const AppNavbar = ({ theme, toggleTheme }) => {
         </Navbar.Collapse>
 
         <div className="navbar-actions d-flex align-items-center gap-2">
+          <GoogleLoginBtn />
           <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
           <Navbar.Toggle aria-controls="main-navbar-nav" className="navbar-toggler-custom" />
         </div>

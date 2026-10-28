@@ -8,6 +8,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './index.css';
 import App from './App.jsx';
 
+
 const app = (
   <StrictMode>
     <Provider store={store}>
