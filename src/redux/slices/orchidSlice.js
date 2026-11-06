@@ -23,7 +23,7 @@ export const createOrchid = createAsyncThunk(
       return created;
     } catch (err) {
       return rejectWithValue(err.message || 'Failed to create orchid');
-    }
+    } 
   }
 );
 

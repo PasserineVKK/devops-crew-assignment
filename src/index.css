@@ -2207,6 +2207,59 @@ button {
   .about-team-images img:last-child { height: 170px; }
 }
 
+.contact-simple-page {
+  max-width: 720px;
+  min-height: 70vh;
+  margin: 0 auto;
+  padding: 96px 0 120px;
+}
+
+.contact-simple-page .title-divider {
+  margin: 18px 0 48px;
+}
+
+.contact-simple-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-simple-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 26px 0;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.contact-simple-item:first-child {
+  border-top: 1px solid var(--border-light);
+}
+
+.contact-simple-item svg {
+  flex: 0 0 auto;
+  color: var(--color-pink-rose);
+}
+
+.contact-simple-item:hover {
+  color: var(--color-pink-deep);
+  padding-left: 10px;
+}
+
+@media (max-width: 575.98px) {
+  .contact-simple-page {
+    min-height: 65vh;
+    padding: 64px 0 80px;
+  }
+
+  .contact-simple-item {
+    font-size: 1rem;
+  }
+}
+
 /* detail page enhancements */
 .detail-hero-card {
   background-color: var(--bg-card);

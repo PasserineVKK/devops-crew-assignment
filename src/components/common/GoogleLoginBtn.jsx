@@ -81,6 +81,19 @@ const GoogleLoginBtn = () => {
     return undefined;
   }, [dispatch, isAuthenticated]);
 
+  const handleLogout = () => {
+    // Clear the application's session immediately.
+    dispatch(logout());
+
+    // Best-effort Google logout/revocation. The app must still log out if
+    // Google's script is unavailable or the revoke callback fails.
+    const googleId = window.google?.accounts?.id;
+    googleId?.disableAutoSelect?.();
+    if (user?.email) {
+      googleId?.revoke?.(user.email, () => {});
+    }
+  };
+
   if (isAuthenticated && user) {
     return (
       <Dropdown align="end">
@@ -97,7 +110,7 @@ const GoogleLoginBtn = () => {
             <div className="mt-1 text-success small"><ShieldCheck size={13} className="me-1" />Curator Admin</div>
           </Dropdown.Header>
           <Dropdown.Divider />
-          <Dropdown.Item onClick={() => dispatch(logout())} className="text-danger">
+          <Dropdown.Item onClick={handleLogout} className="text-danger">
             <LogOut size={15} className="me-2" />Sign Out
           </Dropdown.Item>
         </Dropdown.Menu>
